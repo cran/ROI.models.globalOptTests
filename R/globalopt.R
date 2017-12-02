@@ -3,20 +3,26 @@
 build_ROI_object <- function(test_name) {
     n <- getProblemDimen(test_name)
     db <- getDefaultBounds(test_name)
-    vb <- V_bound(li = seq_along(db$lower), ui = seq_along(db$upper), 
-                  lb = db$lower, ub = db$upper, nobj = n)
-    fobj <- F_objective(F = function(x) goTest(x, test_name), n=n)
-    OP(objective = fobj, bounds = vb)
+    vb <- V_bound(li=seq_along(db$lower), ui=seq_along(db$upper), 
+                  lb=db$lower, ub=db$upper)
+    fun <- function(x) {
+      finiteize(goTest(x, test_name))
+    }
+    fobj <- F_objective(F= fun, n=n)
+    OP(objective=fobj, bounds=vb)
 }
 
-## NOTE: I removed "Paviani" since it gave NaN
+finiteize <- function(x) {
+    if ( !is.finite(x) ) .Machine[["double.xmax"]] else x
+}
+
 globopt_names <- function() {
     c("Ackleys", "AluffiPentini", "BeckerLago", "Bohachevsky1", "Bohachevsky2", 
       "Branin", "Camel3", "Camel6", "CosMix2", "CosMix4", "DekkersAarts", 
       "Easom", "EMichalewicz", "Expo", "GoldPrice", "Griewank", "Gulf", "Hartman3", 
       "Hartman6", "Hosaki", "Kowalik", "LM1", "LM2n10", "LM2n5", "McCormic",
       "MeyerRoth", "MieleCantrell", "Modlangerman", "ModRosenbrock", "MultiGauss", 
-      "Neumaier2", "Neumaier3", "Periodic", "PowellQ", "PriceTransistor", 
+      "Neumaier2", "Neumaier3", "Paviani", "Periodic", "PowellQ", "PriceTransistor", 
       "Rastrigin", "Rosenbrock", "Salomon", "Schaffer1", "Schaffer2", "Schubert", 
       "Schwefel", "Shekel10", "Shekel5", "Shekel7", "Shekelfox5", "Wood", 
       "Zeldasine10", "Zeldasine20")
@@ -38,7 +44,7 @@ globopt_names <- function() {
 ##' @examples
 ##' ## list all available MIPLIB-2010 problems
 ##' globopt()
-##' ## get all miplib problems
+##' ## get all problems
 ##' globopt("all")
 ##' ## get a single problem
 ##' globopt("MieleCantrell")
@@ -51,7 +57,7 @@ globopt <- function(x = c("all", "metainfo", "Ackleys", "AluffiPentini", "Becker
                           "Expo", "GoldPrice", "Griewank", "Gulf", "Hartman3", "Hartman6", 
                           "Hosaki", "Kowalik", "LM1", "LM2n10", "LM2n5", "McCormic",
                           "MeyerRoth", "MieleCantrell", "Modlangerman", "ModRosenbrock", 
-                          "MultiGauss", "Neumaier2", "Neumaier3", "Periodic", 
+                          "MultiGauss", "Neumaier2", "Neumaier3", "Paviani", "Periodic", 
                           "PowellQ", "PriceTransistor", "Rastrigin", "Rosenbrock", 
                           "Salomon", "Schaffer1", "Schaffer2", "Schubert", "Schwefel", 
                           "Shekel10", "Shekel5", "Shekel7", "Shekelfox5", "Wood", 
