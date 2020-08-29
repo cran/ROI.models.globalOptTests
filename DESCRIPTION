@@ -1,7 +1,7 @@
 Package: ROI.models.globalOptTests
 Type: Package
 Title: 'ROI' Optimization Problems Based on 'globalOptTests'
-Version: 1.1
+Version: 1.1-1
 Author: Florian Schwendinger [aut, cre]
 Maintainer: Florian Schwendinger <FlorianSchwendinger@gmx.at>
 Description: A collection of non-linear optimization problems with box bounds
@@ -14,6 +14,6 @@ Suggests: Rglpk (>= 0.6-2)
 License: GPL-3
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-12-02 16:22:13 UTC; florian
+Packaged: 2020-08-29 18:46:43 UTC; f
 Repository: CRAN
-Date/Publication: 2017-12-02 16:39:46 UTC
+Date/Publication: 2020-08-29 19:10:08 UTC

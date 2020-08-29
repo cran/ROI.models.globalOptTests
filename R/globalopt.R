@@ -44,7 +44,7 @@ globopt_names <- function() {
 ##' @examples
 ##' ## list all available MIPLIB-2010 problems
 ##' globopt()
-##' ## get all problems
+##' ## get all miplib problems
 ##' globopt("all")
 ##' ## get a single problem
 ##' globopt("MieleCantrell")

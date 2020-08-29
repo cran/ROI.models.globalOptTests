@@ -4,15 +4,20 @@
 \alias{globopt}
 \title{Access \code{globalOptTests}}
 \usage{
-globopt(x = c("all", "metainfo", "Ackleys", "AluffiPentini", "BeckerLago",
-  "Bohachevsky1", "Bohachevsky2", "Branin", "Camel3", "Camel6", "CosMix2",
-  "CosMix4", "DekkersAarts", "Easom", "EMichalewicz", "Expo", "GoldPrice",
-  "Griewank", "Gulf", "Hartman3", "Hartman6", "Hosaki", "Kowalik", "LM1",
-  "LM2n10", "LM2n5", "McCormic", "MeyerRoth", "MieleCantrell", "Modlangerman",
-  "ModRosenbrock", "MultiGauss", "Neumaier2", "Neumaier3", "Paviani",
-  "Periodic", "PowellQ", "PriceTransistor", "Rastrigin", "Rosenbrock",
-  "Salomon",      "Schaffer1", "Schaffer2", "Schubert", "Schwefel", "Shekel10",
-  "Shekel5", "Shekel7", "Shekelfox5", "Wood", "Zeldasine10", "Zeldasine20"))
+globopt(x = c("all", "metainfo", "Ackleys", "AluffiPentini",
+              "BeckerLago", "Bohachevsky1", "Bohachevsky2",
+              "Branin", "Camel3", "Camel6", "CosMix2", "CosMix4",
+              "DekkersAarts", "Easom", "EMichalewicz", "Expo",
+              "GoldPrice", "Griewank", "Gulf", "Hartman3",
+              "Hartman6", "Hosaki", "Kowalik", "LM1", "LM2n10",
+              "LM2n5", "McCormic", "MeyerRoth", "MieleCantrell",
+              "Modlangerman", "ModRosenbrock", "MultiGauss",
+              "Neumaier2", "Neumaier3", "Paviani", "Periodic",
+              "PowellQ", "PriceTransistor", "Rastrigin",
+              "Rosenbrock", "Salomon", "Schaffer1", "Schaffer2",
+              "Schubert", "Schwefel", "Shekel10", "Shekel5",
+              "Shekel7", "Shekelfox5", "Wood", "Zeldasine10",
+              "Zeldasine20"))
 }
 \arguments{
 \item{x}{a character giving the names of the optimization problems
@@ -29,7 +34,7 @@ Get one or more optimization problems, meta information or a listing
 \examples{
 ## list all available MIPLIB-2010 problems
 globopt()
-## get all problems
+## get all miplib problems
 globopt("all")
 ## get a single problem
 globopt("MieleCantrell")
