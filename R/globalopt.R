@@ -1,5 +1,4 @@
-
-
+# ROI wrapper functions for the globalOptTests package
 build_ROI_object <- function(test_name) {
     n <- getProblemDimen(test_name)
     db <- getDefaultBounds(test_name)
@@ -19,8 +18,8 @@ finiteize <- function(x) {
 globopt_names <- function() {
     c("Ackleys", "AluffiPentini", "BeckerLago", "Bohachevsky1", "Bohachevsky2", 
       "Branin", "Camel3", "Camel6", "CosMix2", "CosMix4", "DekkersAarts", 
-      "Easom", "EMichalewicz", "Expo", "GoldPrice", "Griewank", "Gulf", "Hartman3", 
-      "Hartman6", "Hosaki", "Kowalik", "LM1", "LM2n10", "LM2n5", "McCormic",
+      "Easom", "EMichalewicz", "Expo", "GoldPrice", "Griewank", "Gulf",
+      "Hosaki", "Kowalik", "LM1", "LM2n10", "LM2n5", "McCormic",
       "MeyerRoth", "MieleCantrell", "Modlangerman", "ModRosenbrock", "MultiGauss", 
       "Neumaier2", "Neumaier3", "Paviani", "Periodic", "PowellQ", "PriceTransistor", 
       "Rastrigin", "Rosenbrock", "Salomon", "Schaffer1", "Schaffer2", "Schubert", 
@@ -54,7 +53,7 @@ globopt_names <- function() {
 globopt <- function(x = c("all", "metainfo", "Ackleys", "AluffiPentini", "BeckerLago", 
                           "Bohachevsky1", "Bohachevsky2", "Branin", "Camel3", "Camel6", 
                           "CosMix2", "CosMix4", "DekkersAarts", "Easom", "EMichalewicz", 
-                          "Expo", "GoldPrice", "Griewank", "Gulf", "Hartman3", "Hartman6", 
+                          "Expo", "GoldPrice", "Griewank", "Gulf", 
                           "Hosaki", "Kowalik", "LM1", "LM2n10", "LM2n5", "McCormic",
                           "MeyerRoth", "MieleCantrell", "Modlangerman", "ModRosenbrock", 
                           "MultiGauss", "Neumaier2", "Neumaier3", "Paviani", "Periodic", 
